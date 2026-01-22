@@ -1,152 +1,72 @@
-# InSight 2.0 - Cyberpunk Student Performance Dashboard
+# ⚡ InSight 2.0 - Cyberpunk Student OS
 
-A full-stack academic operating system with a hacker/netrunner aesthetic that tracks engineering performance and integrates AI-powered study tools.
+**Status: Live & Production Ready** 🚀  
+**URL:** [https://in-sight-2-0.vercel.app/](https://in-sight-2-0.vercel.app/)
 
-## 🎨 Features
-
-### 🎯 Command Center (Dashboard)
-- **Bento Grid Layout** with glassmorphism cards
-- **CGPA/GPA Tracking** with interactive line charts (Recharts)
-- **Attendance Monitoring** with circular progress indicators
-- **Pending Assignments** task list with priority levels
-- **Subject-wise Attendance** breakdown
-
-### 🧠 Neural Link (AI Study Tool)
-- Paste any syllabus topic
-- Get AI-generated exam-ready notes in Markdown
-- Copy-to-clipboard functionality
-- Beautiful markdown rendering with cyberpunk styling
-
-### 📚 Course Manager
-- Grid view of all current semester courses
-- **Syllabus Completion** progress tracking
-- **Attendance Percentage** per course
-- Professor information and credits
-- Color-coded status indicators
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- React 18 + TypeScript
-- Vite (Build tool)
-- Tailwind CSS (Styling)
-- Recharts (Data visualization)
-- React Router (Navigation)
-- React Markdown (Notes rendering)
-
-**Backend:**
-- FastAPI (Python)
-- Pydantic (Data validation)
-- Uvicorn (ASGI server)
-- Supabase (Database - ready for integration)
-
-## 🎨 Design Philosophy
-
-**Theme:** Cyberpunk/Netrunner Dark Mode
-- **Colors:** Deep black (#0a0a0a), Neon Green (#00ff41), Neon Purple (#b026ff)
-- **Typography:** Inter (UI), JetBrains Mono (data/code)
-- **Effects:** Glassmorphism, Neon glows, Smooth animations
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ and npm
-- Python 3.9+
-
-### Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-The frontend will run on `http://localhost:5173`
-
-### Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the server
-uvicorn app.main:app --reload
-```
-
-The backend will run on `http://localhost:8000`
-
-### API Documentation
-
-Once the backend is running:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
-
-## 📡 API Endpoints
-
-- `GET /api/stats` - Dashboard statistics (CGPA, GPA history, attendance)
-- `GET /api/courses` - Current semester courses
-- `GET /api/assignments` - Pending assignments
-- `POST /api/generate-notes` - Generate AI study notes (currently mocked)
-
-## 🎯 Project Structure
-
-```
-InSight-2.0/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── Sidebar.tsx
-│   │   ├── pages/
-│   │   │   ├── Dashboard.tsx
-│   │   │   ├── NeuralLink.tsx
-│   │   │   └── CourseManager.tsx
-│   │   ├── App.tsx
-│   │   └── index.css
-│   ├── package.json
-│   └── tailwind.config.js
-└── backend/
-    ├── app/
-    │   └── main.py
-    ├── requirements.txt
-    └── README.md
-```
-
-## 🔮 Future Enhancements
-
-- [ ] Real LLM integration for Neural Link (OpenAI/Gemini)
-- [ ] Supabase database integration
-- [ ] User authentication (Supabase Auth)
-- [ ] Real-time data sync
-- [ ] Assignment submission tracking
-- [ ] Study timer and Pomodoro integration
-- [ ] Performance analytics and insights
-- [ ] Mobile responsive optimization
-- [ ] Dark/Light theme toggle (currently dark only)
-
-## 📸 Screenshots
-
-*(Screenshots will be added after first run)*
-
-## 🤝 Contributing
-
-This is a personal project, but feel free to fork and customize for your own use!
-
-## 📄 License
-
-MIT License - Feel free to use this project as you wish.
+InSight 2.0 is a full-stack academic operating system designed with a "Netrunner" aesthetic. It transforms the engineering experience by combining performance tracking with a direct neural link to Google's Gemini AI for exam preparation.
 
 ---
 
-**Built with 💚 by Yash Kokane**
-*"Your Academic Operating System"*
+## 🛠️ Evolution: What’s New
+Since the initial prototype, the following systems are now **fully operational**:
+* **Authentication:** Secured by Supabase Auth (Email/Password) with custom password validation.
+* **Neural Link (Athena):** Integrated with **Google Gemini Pro API** for real-time, exam-ready study notes.
+* **Database:** Live Supabase integration with **PostgreSQL**, utilizing RLS (Row Level Security) and `ON DELETE CASCADE` for data integrity.
+* **Deployment:** CI/CD pipeline established via **GitHub and Vercel**.
+
+---
+
+## 🎨 Features
+
+### 🧠 Neural Link (AI Study Tool)
+* **Real-time AI:** Uses Google Gemini to generate structured Markdown notes.
+* **Academic Context:** Athena understands your current semester and level to tailor her responses.
+
+### 🎯 Command Center (Dashboard)
+* **Bento Grid Layout:** High-density data visualization with glassmorphism.
+* **Performance Metrics:** Real-time tracking of CGPA (targeting 10-pointer streaks) and GPA history.
+
+### 🔒 Security First
+* **Env Management:** Secured via `.gitignore` and Vercel encrypted environment variables.
+* **API Protection:** Revoked and rotated keys for Gemini and Supabase to prevent unauthorized usage.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS |
+| **Intelligence** | Google Gemini Pro API |
+| **Backend/DB** | Supabase (PostgreSQL), Supabase Auth |
+| **Charts** | Recharts |
+| **Deployment** | Vercel (Frontend), GitHub (Version Control) |
+
+---
+
+## 🚀 Deployment & Setup
+
+### Environment Variables
+To run this project, you must create a `.env` file in the `frontend` directory with the following:
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_key
+VITE_GEMINI_API_KEY=your_google_ai_key
+
+### Installation
+
+# Clone the repo
+git clone [https://github.com/yashkokane1031/InSight-2.0](https://github.com/yashkokane1031/InSight-2.0)
+
+# Install & Start Frontend
+cd frontend
+npm install
+npm run dev
+
+## 🔮 Future Roadmap
+[ ] Mobile Responsive Optimization: Implementing a custom sidebar toggle for mobile users.
+[ ] Automated Transcript Parsing: Upload PDFs to auto-update academic history.
+[ ] Study Timer: Integrated Pomodoro clock with cyberpunk visualizers.
+
+Built with 💚 by Yash Kokane 
+
