@@ -62,11 +62,16 @@ git clone [https://github.com/yashkokane1031/InSight-2.0](https://github.com/yas
 cd frontend
 npm install
 npm run dev
+```env
+
+---
 
 ## 🔮 Future Roadmap
 [ ] Mobile Responsive Optimization: Implementing a custom sidebar toggle for mobile users.
 [ ] Automated Transcript Parsing: Upload PDFs to auto-update academic history.
 [ ] Study Timer: Integrated Pomodoro clock with cyberpunk visualizers.
+
+---
 
 Built with 💚 by Yash Kokane 
 
