@@ -1,77 +1,130 @@
-# ⚡ InSight 2.0 - Cyberpunk Student OS
+# ⚡ InSight 2.0 — Cyberpunk Student Operating System
 
-**Status: Live & Production Ready** 🚀  
-**URL:** [https://in-sight-2-0.vercel.app/](https://in-sight-2-0.vercel.app/)
+## 🧠 Overview
 
-InSight 2.0 is a full-stack academic operating system designed with a "Netrunner" aesthetic. It transforms the engineering experience by combining performance tracking with a direct neural link to Google's Gemini AI for exam preparation.
+**InSight 2.0** is a full-stack academic operating system built with a cyberpunk "Netrunner" aesthetic, designed to help engineering students track performance, optimize study strategy, and prepare for exams using AI-generated, syllabus-aware notes.
 
----
+At its core, InSight combines:
 
-## 🛠️ Evolution: What’s New
-Since the initial prototype, the following systems are now **fully operational**:
-* **Authentication:** Secured by Supabase Auth (Email/Password) with custom password validation.
-* **Neural Link (Athena):** Integrated with **Google Gemini Pro API** for real-time, exam-ready study notes.
-* **Database:** Live Supabase integration with **PostgreSQL**, utilizing RLS (Row Level Security) and `ON DELETE CASCADE` for data integrity.
-* **Deployment:** CI/CD pipeline established via **GitHub and Vercel**.
+- **Structured academic data**
+- **Real-time AI assistance**
+- **High-density, futuristic UI**
+
+…into a single, focused productivity system.
 
 ---
 
-## 🎨 Features
+## 🚀 What Makes It Different
 
-### 🧠 Neural Link (AI Study Tool)
-* **Real-time AI:** Uses Google Gemini to generate structured Markdown notes.
-* **Academic Context:** Athena understands your current semester and level to tailor her responses.
+Unlike generic study tools, **InSight is context-aware**.
 
-### 🎯 Command Center (Dashboard)
-* **Bento Grid Layout:** High-density data visualization with glassmorphism.
-* **Performance Metrics:** Real-time tracking of CGPA (targeting 10-pointer streaks) and GPA history.
+It understands:
 
-### 🔒 Security First
-* **Env Management:** Secured via `.gitignore` and Vercel encrypted environment variables.
-* **API Protection:** Revoked and rotated keys for Gemini and Supabase to prevent unauthorized usage.
+- Your semester
+- Your academic level
+- Your performance trajectory
+
+…and adapts AI responses accordingly.
+
+**This is not a chatbot — it's a neural study interface.**
+
+---
+
+## 🧬 System Architecture (Evolution)
+
+Since the initial prototype, InSight 2.0 now includes:
+
+### Authentication Layer
+- Supabase Auth (Email / Password)
+- Custom password validation & secure session handling
+
+### Neural Link (Athena AI)
+- Integrated with Google Gemini Pro API
+- Generates structured, exam-ready Markdown notes
+- Contextualized by semester and subject depth
+
+### Database & Integrity
+- Supabase PostgreSQL backend
+- Row Level Security (RLS)
+- Foreign-key enforcement with ON DELETE CASCADE
+
+### Deployment Pipeline
+- GitHub → Vercel CI/CD
+- Environment-level secret management
+
+---
+
+## 🎨 Core Features
+
+### 🧠 Athena — AI Study Companion
+- Real-time AI-generated study notes
+- Structured, syllabus-friendly Markdown output
+- Context-aware responses (not generic explanations)
+
+### 🎯 Command Center Dashboard
+- Bento-grid layout with glassmorphism UI
+- CGPA tracking with historical GPA visualization
+- Designed for quick cognitive parsing, not clutter
+
+### � Security-First Design
+- All secrets isolated via `.env` and Vercel encrypted variables
+- Gemini & Supabase keys rotated and protected
+- No sensitive data exposed client-side
 
 ---
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-| :--- | :--- |
+|-------|-----------|
 | **Frontend** | React 18, TypeScript, Vite, Tailwind CSS |
-| **Intelligence** | Google Gemini Pro API |
-| **Backend/DB** | Supabase (PostgreSQL), Supabase Auth |
-| **Charts** | Recharts |
-| **Deployment** | Vercel (Frontend), GitHub (Version Control) |
+| **AI Layer** | Google Gemini Pro API |
+| **Backend / DB** | Supabase (PostgreSQL), Supabase Auth |
+| **Visualization** | Recharts |
+| **Deployment** | Vercel, GitHub |
 
 ---
 
-## 🚀 Deployment & Setup
+## ⚙️ Local Setup & Deployment
 
 ### Environment Variables
-To run this project, you must create a `.env` file in the `frontend` directory with the following:
+
+Create a `.env` file inside the `frontend` directory:
+
 ```env
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_key
 VITE_GEMINI_API_KEY=your_google_ai_key
+```
 
 ### Installation
 
-# Clone the repo
-git clone [https://github.com/yashkokane1031/InSight-2.0](https://github.com/yashkokane1031/InSight-2.0)
+```bash
+# Clone the repository
+git clone https://github.com/yashkokane1031/InSight-2.0
 
-# Install & Start Frontend
+# Install dependencies & start dev server
 cd frontend
 npm install
 npm run dev
-```env
+```
 
 ---
 
-## 🔮 Future Roadmap
-[ ] Mobile Responsive Optimization: Implementing a custom sidebar toggle for mobile users.
-[ ] Automated Transcript Parsing: Upload PDFs to auto-update academic history.
-[ ] Study Timer: Integrated Pomodoro clock with cyberpunk visualizers.
+## 🔮 Roadmap
+
+Planned upgrades to push InSight further:
+
+- [ ] Mobile-responsive optimization
+- [ ] Automated transcript parsing (PDF upload)
+- [ ] Integrated Pomodoro study timer with cyberpunk visualizers
+- [ ] Advanced analytics and performance predictions
 
 ---
 
-Built with 💚 by Yash Kokane 
+## 👨‍💻 Author
 
+**Built with 💚 by Yash Kokane**  
+Engineering Student • Full-Stack Developer • AI Systems Enthusiast
+
+*"Software should feel intentional. This one does."*
