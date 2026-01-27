@@ -307,16 +307,6 @@ export default function Dashboard() {
                                     </div>
                                 </div>
 
-                                <div className="mb-3">
-                                    <div className="flex justify-between text-sm mb-1">
-                                        <span className="text-gray-300">Completion</span>
-                                        <span className="text-neon-purple font-mono">{course.completion || 0}%</span>
-                                    </div>
-                                    <div className="h-2 bg-cyber-gray rounded-full overflow-hidden">
-                                        <div className="h-full bg-neon-purple" style={{ width: `${course.completion || 0}%` }} />
-                                    </div>
-                                </div>
-
                                 <div className="pt-3 border-t border-gray-700 flex justify-between text-sm">
                                     <span className="text-gray-400">Credits</span>
                                     <span className="text-neon-green font-mono font-bold">{course.credits}</span>

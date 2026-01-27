@@ -5,7 +5,7 @@ import { GripVertical, CheckCircle2, Clock, Archive, Plus, X } from 'lucide-reac
 import { supabase } from '../lib/supabase';
 
 interface Task {
-    id: number;
+    id: string;
     user_id: string;
     title: string;
     subject: string;
@@ -61,26 +61,44 @@ export default function KanbanBoard() {
     const onDragEnd = async (result: DropResult) => {
         const { source, destination, draggableId } = result;
 
+        console.log('Drag result:', { source, destination, draggableId });
+
         if (!destination) return;
         if (source.droppableId === destination.droppableId && source.index === destination.index) return;
 
-        const taskId = parseInt(draggableId);
+        const taskId = draggableId; // Use UUID string directly
         const newStatus = destination.droppableId;
 
+        console.log('Updating task ID:', taskId, 'to status:', newStatus);
+
+        // Store previous state for rollback
+        const previousTasks = [...tasks];
+
+        // Optimistically update UI immediately
+        setTasks(tasks.map(task =>
+            task.id === taskId ? { ...task, status: newStatus } : task
+        ));
+
         try {
-            const { error } = await supabase
+            console.log('Updating task:', taskId, 'to status:', newStatus);
+
+            const { data, error } = await supabase
                 .from('tasks')
                 .update({ status: newStatus })
-                .eq('id', taskId);
+                .eq('id', taskId)
+                .select();
 
-            if (error) throw error;
+            if (error) {
+                console.error('Database error:', error);
+                throw error;
+            }
 
-            // Update local state
-            setTasks(tasks.map(task =>
-                task.id === taskId ? { ...task, status: newStatus } : task
-            ));
+            console.log('Task updated successfully:', data);
         } catch (error) {
             console.error('Failed to update task:', error);
+            // Rollback to previous state on error
+            setTasks(previousTasks);
+            alert('Failed to update task. Please try again.');
         }
     };
 
@@ -168,8 +186,8 @@ export default function KanbanBoard() {
                                         ref={provided.innerRef}
                                         {...provided.droppableProps}
                                         className={`flex-1 p-4 rounded-lg border-2 border-dashed transition-all ${snapshot.isDraggingOver
-                                                ? `border-${column.color} bg-${column.color}/5`
-                                                : 'border-gray-700 bg-cyber-gray/30'
+                                            ? `border-${column.color} bg-${column.color}/5`
+                                            : 'border-gray-700 bg-cyber-gray/30'
                                             } min-h-[400px]`}
                                     >
                                         <div className="space-y-3">
@@ -181,8 +199,8 @@ export default function KanbanBoard() {
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
                                                             className={`glass-card cyber-border p-4 cursor-grab active:cursor-grabbing transition-all ${snapshot.isDragging
-                                                                    ? 'neon-glow-green rotate-2 scale-105'
-                                                                    : 'hover:neon-glow-green'
+                                                                ? 'neon-glow-green rotate-2 scale-105'
+                                                                : 'hover:neon-glow-green'
                                                                 }`}
                                                         >
                                                             <div className="flex items-start gap-3">
