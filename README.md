@@ -14,7 +14,7 @@
 
 **A full-stack academic operating system with a Netrunner aesthetic—designed to help engineering students track performance, optimize study strategy, and ace exams using AI-generated, syllabus-aware notes.**
 
-[🚀 Live Demo](#) • [📖 Documentation](#-system-architecture) • [🐛 Report Bug](https://github.com/yashkokane1031/InSight-2.0/issues) • [✨ Request Feature](https://github.com/yashkokane1031/InSight-2.0/issues)
+[ Documentation](#-table-of-contents) • [🐛 Report Bug](https://github.com/yashkokane1031/InSight-2.0/issues/new?labels=bug) • [✨ Request Feature](https://github.com/yashkokane1031/InSight-2.0/issues/new?labels=enhancement)
 
 </div>
 
