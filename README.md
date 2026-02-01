@@ -22,7 +22,21 @@
 
 ## 📸 Screenshots
 
-> *Coming soon: Dashboard preview, Athena AI interface, and Command Center visualizations*
+<div align="center">
+
+### 🎮 Command Center Dashboard
+![Command Center - CGPA tracking, GPA trajectory, and active courses](screenshots/dashboard.png)
+
+### 🤖 Athena AI Study Companion
+![Athena - AI-powered study assistant with Gemini 2.5 Flash](screenshots/athena.png)
+
+### 📚 Course Manager
+![Course Manager - Track attendance and manage academic workload](screenshots/course-manager.png)
+
+### 📋 Kanban Task Board
+![Task Board - Drag-and-drop task management with Backlog, In Progress, and Mastered columns](screenshots/kanban.png)
+
+</div>
 
 ---
 
